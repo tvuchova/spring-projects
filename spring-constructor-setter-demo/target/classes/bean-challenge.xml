@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cloudService" class="com.example.serviceimpl.CloudServiceImpl">
+	</bean>
+	<bean id="ecommerceService" class="com.example.serviceimpl.EcommerceServiceImpl">
+	</bean>
+	<bean id="myorg" class="com.example.domain.Organization">
+		<constructor-arg value="Google" name="companyName"></constructor-arg>
+		<constructor-arg value="1996" name="yearOfIncorporation"></constructor-arg>
+
+		<property name="postalCode" value="7353454"></property>
+		<property name="employeeCount" value="10500"></property>
+		<property name="slogan" value="Organize the eorld information"></property>
+		<property name="businessService" ref="cloudService"></property>
+	</bean>
+
+	<bean id="agency"
+		class="com.example.serviceimpl.AgencyRecruitmentServuceImpl">
+	</bean>
+	<bean id="referral"
+		class="com.example.serviceimpl.ReferralRecruitmentServiceImpl">
+	</bean>
+	<bean id="myhrdept" class="com.timbuchalka.domain.HumanResourceDept">
+		<constructor-arg name="recruitmentService" ref="agency"></constructor-arg>
+		<constructor-arg name="organization" ref="myorg"></constructor-arg>
+		<property name="deptName" value='"Human Resourse Department"'></property>
+	</bean>
+</beans>

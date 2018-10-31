@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.timbuchalka'
+version = '0.0.1-SNAPSHOT'
+
+description = """spring-ioc-demo-1"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    
+    compile group: 'org.springframework', name: 'spring-core', version:'4.3.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version:'4.3.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version:'4.3.4.RELEASE'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
