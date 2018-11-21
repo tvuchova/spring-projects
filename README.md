@@ -1,9 +1,6 @@
 # spring-projects
 <table>
 
-
-
-
 <thead>
 <tr>
 <th>Sample</th>
